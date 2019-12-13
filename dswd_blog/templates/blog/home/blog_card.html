@@ -1,0 +1,17 @@
+{% for data in blogs.items %}
+<div class="blog_card">
+    {% if current_user.id == data['author'].id %}
+        <a href="{{ url_for('blog.edit_blog', blog_id=data['id']) }}">Edit</a>
+        <a href="{{ url_for('blog.delete_blog', blog_id=data['id']) }}">Delete</a>
+    {% endif %}
+    <h3>
+        {{ data['title'] }}
+    </h3>
+
+<!--    Try this:-->
+<!--    .strftime('%Y-%m-%d')-->
+
+    <p>{{ data['author'].username }} - {{ data['created_at'] }}</p>
+    <p>{{ data['content'] }}</p>
+</div>
+{% endfor %}

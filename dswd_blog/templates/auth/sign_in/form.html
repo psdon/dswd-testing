@@ -1,0 +1,34 @@
+<div>
+    <form method="POST" novalidate>
+        {{ form.csrf_token() }}
+
+
+        {% if form.username_or_email.errors %}
+        <div>
+            <span>Username is a required field</span>
+        </div>
+        {% endif %}
+
+        {{ form.username_or_email (placeholder="Username", type="email") }}
+
+        {% if form.password.errors %}
+        <div>
+            <span>Password is a required field</span>
+        </div>
+        {% endif %}
+
+        {{ form.password (placeholder="Password") }}
+
+        <div>
+            <button type="submit">
+                Sign In
+            </button>
+        </div>
+
+    </form>
+
+    <div>
+        <a href="{{ url_for('auth.sign_up') }}">Haven't signup yet?</a>
+        <a href="{{ url_for('auth.account_recover') }}">Forgot your password?</a>
+    </div>
+</div>

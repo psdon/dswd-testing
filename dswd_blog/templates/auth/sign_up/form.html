@@ -1,0 +1,48 @@
+<div>
+    <form method="POST" novalidate>
+        {{ form.csrf_token() }}
+
+        {% if form.username.errors %}
+        <div>
+            {{ form.username.errors[0] }}
+        </div>
+        {% endif %}
+
+        {{ form.username (placeholder="Username", type="text") }}
+
+        {% if form.email.errors %}
+        <div>
+            {{ form.email.errors[0] }}
+        </div>
+        {% endif %}
+
+        {{ form.email (placeholder="Email", type="email") }}
+
+        {% if form.password.errors %}
+        <div>
+            {{ form.password.errors[0] }}
+        </div>
+        {% endif %}
+
+        {{ form.password (placeholder="Password") }}
+
+        {% if form.confirm.errors %}
+        <div>
+            {{ form.confirm.errors[0] }}
+        </div>
+        {% endif %}
+
+        {{ form.confirm (placeholder="Confirm Password") }}
+
+        <div>
+            <button type="submit">
+                Sign Up
+            </button>
+        </div>
+    </form>
+
+    <div>
+        <a href="{{ url_for('auth.sign_in') }}">Already have an account?</a>
+        <a href="{{ url_for('auth.account_recover') }}">Forgot your password?</a>
+    </div>
+</div>

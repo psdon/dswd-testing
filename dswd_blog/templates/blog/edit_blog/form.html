@@ -1,0 +1,30 @@
+<form method="POST" novalidate>
+    {{ form.csrf_token() }}
+
+    {% if form.title.errors %}
+        <div>
+            {{ form.title.errors[0] }}
+        </div>
+    {% endif %}
+
+    <div>
+        {{ form.title (placeholder="Title", type="text") }}
+    </div>
+
+    {% if form.content.errors %}
+        <div>
+            {{ form.content.errors[0] }}
+        </div>
+    {% endif %}
+
+    <div>
+        {{ form.content (placeholder="Content", type="text") }}
+    </div>
+
+    <div>
+        <button type="submit">
+            Save
+        </button>
+    </div>
+
+</form>

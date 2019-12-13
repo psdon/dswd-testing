@@ -1,0 +1,21 @@
+#main_attraction {
+    height: 350px;
+    width: 350px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.blog_card {
+    background: #d1c9b2;
+}
+
+.w-f {
+    width: 100%;
+}
+
+.bg-yellow{
+    background: #f2eab1;
+}

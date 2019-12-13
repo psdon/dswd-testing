@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>
+   Recover Account
+</h2>
+
+<form method="POST" novalidate>
+    {{ form.csrf_token() }}
+
+    {% if form.email.errors %}
+    <div>
+        <span>{{ form.email.errors[0] }}</span>
+    </div>
+    {% endif %}
+
+    {{ form.email (placeholder="Email", type="email") }}
+
+    <div>
+        <button type="submit">
+            Submit
+        </button>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block title %}
+Recover Account | DSWD
+{% endblock %}
